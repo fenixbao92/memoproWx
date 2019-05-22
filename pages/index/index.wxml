@@ -2,6 +2,12 @@
 <view class="container">
   <view>
     <navigator class="index-intro__btn btn btn-danger btn-md" url="/pages/order/order">进入商城</navigator>
+    <view class="btn-area" id="buttonContainer">
+      <button type="default" bindtap='login'>login</button>
+      <button type="default" bindtap='getUserInfo'>getUserInfo</button>
+      <button type="default" bindtap='getSetting'>getSetting</button>
+      <button open-type='getUserInfo' bindgetuserinfo='bindgetuserinfo'>auth</button>
+    </view>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>

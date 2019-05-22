@@ -27,6 +27,8 @@ Page({
             success: function(res){
               console.log("login success!");
               console.log(res);
+              wx.setStorageSync("sessionId", res.data.msg);
+              console.log(wx.getStorageSync("sessionId"));
             }
           })
         } else {
