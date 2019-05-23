@@ -23,7 +23,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx6a56c80f9f5aa662",
-	"projectname": "MemoPro",
+	"projectname": "memoproWx",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
