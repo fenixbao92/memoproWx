@@ -8,6 +8,14 @@
       <button type="default" bindtap='getSetting'>getSetting</button>
       <button open-type='getUserInfo' bindgetuserinfo='bindgetuserinfo'>auth</button>
       <button type="default" bindtap='sendTestHttp'>sendTestHttp</button>
+
+      <modal show="{{showModal}}" height='60%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+        <view class="section">
+          <view class="section__title">你输入的是：{{inputValue}}</view>
+          <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+        </view>
+      </modal>
+      
     </view>
   </view>
   <view class="usermotto">
