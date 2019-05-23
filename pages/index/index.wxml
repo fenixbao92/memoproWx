@@ -7,6 +7,7 @@
       <button type="default" bindtap='getUserInfo'>getUserInfo</button>
       <button type="default" bindtap='getSetting'>getSetting</button>
       <button open-type='getUserInfo' bindgetuserinfo='bindgetuserinfo'>auth</button>
+      <button type="default" bindtap='sendTestHttp'>sendTestHttp</button>
     </view>
   </view>
   <view class="usermotto">

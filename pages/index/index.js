@@ -45,5 +45,11 @@ Page({
         console.log(res);
       }
     })
+  },
+  sendTestHttp:function(){
+    var data = {};
+    app.httpClient.post("https://memopro.fenixbao92.com/wx/text",data)
+    .then(res =>{console.log("success callback!");console.log(res)})
+    .catch(res => { console.log("fail callback!");console.log(res) })
   }
 })
