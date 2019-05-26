@@ -1,6 +1,8 @@
-dateFormat = function (timeStr) {
-  var timestamp = Date.parse(timeStr);
-  var date = getDate(timestamp);
+const dateFormat = function (timeStr) {
+  if(timeStr==null){
+    return null;
+  }
+  var date = new Date(timeStr);
   var year = date.getFullYear();
   var month = date.getMonth() + 1;
   var day = date.getDay();
@@ -25,6 +27,4 @@ dateFormat = function (timeStr) {
   return year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
 }
 
-module.exports = {
-  dateFormat: dateFormat
-}
+module.exports.dateFormat = dateFormat

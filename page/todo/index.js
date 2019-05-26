@@ -1,4 +1,5 @@
 import net from "../../utils/net.js"
+import timeUtil from "../../utils/timeUtil.js"
 
 Page({
   onShow() {
@@ -21,7 +22,14 @@ Page({
     var that = this;
     net.httpClient.post("/wx/todo/page/" + offest + "/" + size).then((res) => {
       console.log(res);
-      
+      res.todos.forEach((item=>{
+        item.startTime = timeUtil.dateFormat(item.startTime);
+        item.endTime = timeUtil.dateFormat(item.endTime);
+        item.updateTime = timeUtil.dateFormat(item.updateTime);
+        if (item.costTimeStr==='-'){
+          item.costTimeStr=null;
+        }
+      }));
       that.setData({
         list: res.todos
       })
