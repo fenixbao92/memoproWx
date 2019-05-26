@@ -1,0 +1,38 @@
+<!--page/todo/index.wxml-->
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="resources/kind/logo.png"></image>
+    <view class="index-desc">云端笔记 想记就记</view>
+    <view>
+      <navigator url="pages/doc-web-view/doc-web-view" class="weui-agree__link"></navigator>
+    </view>
+  </view>
+  <!--index.wxml-->
+  <view class="container">
+    <view class="userinfo">
+      <button wx:if="{{!bindinfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+      <block wx:else>
+        <image bindtap="bindStartTap" class="userinfo-avatar" src="{{bindinfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{bindinfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+
+  <modal show="{{showModal}}" height='60%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+    <view>
+      <view>第一次使用 请输入账号密码创建用户</view>
+      <view>如果在web端已有账号</view>
+      <view>输入账号密码会进行自动绑定</view>
+      <view>
+        <view class='rowLayout'>
+          <view>账号：</view>
+          <view><input bindinput="bindKeyAccount" placeholder="请输入账号" /></view>
+        </view>
+        <view class='rowLayout'>
+          <view>密码：</view>
+          <view><input bindinput="bindKeyPassword" placeholder="请输入密码" /></view>
+        </view>
+      </view>
+    </view>
+  </modal>
+</view>

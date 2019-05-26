@@ -1,14 +1,41 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/order/order",
-    "pages/homepage/homepage"
+    "page/index/index",
+    "page/social/index",
+    "page/todo/index",
+    "page/reading/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "MemoPro",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/todo/index",
+        "iconPath": "image/icon_API.png",
+        "selectedIconPath": "image/icon_API_HL.png",
+        "text": "待办事项"
+      },
+      {
+        "pagePath": "page/social/index",
+        "iconPath": "image/icon_component.png",
+        "selectedIconPath": "image/icon_component_HL.png",
+        "text": "通讯录"
+      },
+      {
+        "pagePath": "page/reading/index",
+        "iconPath": "image/icon_cloud.png",
+        "selectedIconPath": "image/icon_cloud_HL.png",
+        "text": "阅读书目"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,17 @@
+<!--component/todolist.wxml-->
+<wxs module="timeUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view class='list-group'>
+
+  <view class='list-right'>
+    <view class='title'>{{name}}</view>
+    <view class='desc'>{{index}}</view>
+    <view class='price-box'>
+      <text class='price'>计划时间:{{planTimeHour}}h{{planTimeMinute}}m</text>
+      <text class='num'>已用时间{{costTimeStr}}</text>
+    </view>
+    <view class='illustrate'>
+      <a class='more' wx:if="{{startTime}}">开始时间:{{timeUtil.dateFormat(startTime)}}</a>
+      <a class='more' wx:if="{{endTime}}">结束时间:{{timeUtil.dateFormat(endTime)}}</a>
+    </view>
+  </view>
+</view>

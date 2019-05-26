@@ -1,0 +1,12 @@
+<!--page/todo/index.wxml-->
+<todolist id="todolist"  wx:for="{{list}}" wx:key="unique"
+  index="{{item.index}}"
+  name="{{item.name}}"
+  status="{{item.status}}"
+  planTimeHour="{{item.planTimeHour}}"
+  planTimeMinute="{{item.planTimeMinute}}"
+  costTimeStr="{{item.costTimeStr}}"
+  startTime="{{item.startTime}}"
+  endTime="{{item.endTime}}"
+  updateTime="{{item.updateTime}}">
+</todolist>
