@@ -1,5 +1,4 @@
 {
   "usingComponents": {
-    "todolist": "/component/todolist/todolist"
   }
 }

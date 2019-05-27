@@ -1,12 +1,36 @@
 <!--page/todo/index.wxml-->
-<todolist id="todolist"  wx:for="{{list}}" wx:key="unique"
-  index="{{item.index}}"
-  name="{{item.name}}"
-  status="{{item.status}}"
-  planTimeHour="{{item.planTimeHour}}"
-  planTimeMinute="{{item.planTimeMinute}}"
-  costTimeStr="{{item.costTimeStr}}"
-  startTime="{{item.startTime}}"
-  endTime="{{item.endTime}}"
-  updateTime="{{item.updateTime}}">
-</todolist>
+
+<view class="tabTit box">
+  <view class="flex1{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab">
+    <text>{{item}}</text>
+    <image src="/image/green_tri1.png"></image>
+  </view>
+</view>
+
+<view class="tabLayer" hidden="{{tab[0]}}">
+   <text class="{{selectDate==item?'active':''}}" wx:for="{{statusList}}" wx:key="*this" wx:for-item="item" data-value="{{item}}" data-index="{{index}}" data-txt="{{item}}" bindtap="filter">{{item}}</text>
+</view>
+<view class="tabLayer" hidden="{{tab[1]}}">
+  <text class="{{selectStatus==item?'active':''}}" wx:for="{{statusList}}" wx:key="*this" wx:for-item="item" data-value="{{item}}" data-index="{{index}}" data-txt="{{item}}" bindtap="filter">{{item}}</text>
+</view>
+<view class="tabLayer" hidden="{{tab[2]}}">
+  <text class="{{selectTag==item?'active':''}}" wx:for="{{tagList}}" wx:key="*this" wx:for-item="item" data-value="{{item}}" data-index="{{index}}" data-txt="{{item}}" bindtap="filter">{{item}}</text>
+</view>
+
+
+<block wx:for="{{list}}" wx:key="unique">
+  <view class='list-group'>
+    <view class='list-right'>
+      <view class='title'>{{item.name}}</view>
+      <view class='desc'>{{item.index}}</view>
+      <view class='price-box'>
+        <text class='price'>计划时间:{{item.planTimeHour}}h{{item.planTimeMinute}}m</text>
+        <text class='num' wx:if="{{item.costTimeStr}}">已用时间:{{item.costTimeStr}}</text>
+      </view>
+      <view class='illustrate'>
+        <a class='more' wx:if="{{item.startTime}}">开始时间:{{item.startTime}}</a>
+        <a class='more' wx:if="{{item.endTime}}">结束时间:{{item.endTime}}</a>
+      </view>
+    </view>
+  </view>
+</block>
